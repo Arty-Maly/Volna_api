@@ -1,4 +1,5 @@
 
+require IEx
 defmodule VolnaApi.RadioStationController do
   use VolnaApi.Web, :controller
 
@@ -6,6 +7,7 @@ defmodule VolnaApi.RadioStationController do
 
   def index(conn, params) do
     uuid = params["uuid"]
+    IEx.pry
     if uuid do
       device = Repo.get_by(VolnaApi.Device, uuid: uuid)
       radio_stations = Repo.all(RadioStation)
@@ -13,7 +15,8 @@ defmodule VolnaApi.RadioStationController do
         if device.need_sync do
           render(conn, "index.json", radio_stations: radio_stations)
         else
-          render(conn, "index.json", radio_stations: [])
+          #for testing and development purposes always return the list even if no sync needed
+          render(conn, "index.json", radio_stations: radio_stations)
         end
       else
         changeset = VolnaApi.Device.changeset(%VolnaApi.Device{}, %{uuid: uuid})
