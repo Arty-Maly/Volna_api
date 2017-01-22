@@ -6,7 +6,7 @@ defmodule VolnaApi.RadioStationTest do
 
   @valid_attrs %{name: "Radio", url: "www", image: "abc", position: 1}
   @invalid_attrs %{name: 123, url: 123, image: 123, position: "bla"}
-  @missing_attrs %{name: nil, url: nil, position: nil}
+  @missing_attrs %{name: nil, url: nil, position: nil, image: nil}
 
   test "changeset with valid attributes" do
     changeset = RadioStation.changeset(%RadioStation{}, @valid_attrs)
@@ -28,5 +28,6 @@ defmodule VolnaApi.RadioStationTest do
     assert changeset.errors[:name] == {"Missing Requires Params", [validation: :required]}
     assert changeset.errors[:url] == {"Missing Requires Params", [validation: :required]}
     assert changeset.errors[:position] == {"Missing Requires Params", [validation: :required]}
+    assert changeset.errors[:image] == {"Missing Requires Params", [validation: :required]}
   end
 end

@@ -11,11 +11,14 @@
 # and so on) as they will fail if something goes wrong.
 
 
-Enum.each(stations, fn({key, [url, position]}) ->
+
+
+Enum.each(stations, fn({key, [url, position, image]}) ->
   VolnaApi.Repo.insert!(%VolnaApi.RadioStation{
     name: key,
     url: url,
-    position: position
+    position: position,
+    image: image
     })
 end)
 
