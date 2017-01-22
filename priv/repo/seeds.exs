@@ -10,10 +10,12 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-Enum.each(stations, fn({key, value}) ->
+
+Enum.each(stations, fn({key, [url, position]}) ->
   VolnaApi.Repo.insert!(%VolnaApi.RadioStation{
     name: key,
-    url: value
+    url: url,
+    position: position
     })
 end)
 

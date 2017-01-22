@@ -9,7 +9,8 @@ defmodule VolnaApi.RadioStationView do
     %{
       name: radio_station.name,
       url: radio_station.url,
-      image: radio_station.image
+      image: radio_station.image,
+      position: radio_station.position
     }
   end
 end

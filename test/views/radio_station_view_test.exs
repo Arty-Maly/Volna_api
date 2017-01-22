@@ -7,10 +7,10 @@ defmodule VolnaApi.RadioStationViewTest do
     radio_station = insert(:radio_station)
 
     rendered_json = RadioStationView.to_json(radio_station)
-
     assert rendered_json == %{
       name: radio_station.name,
       url: radio_station.url,
+      position: radio_station.position,
       image: nil
     }
   end
