@@ -6,8 +6,6 @@
 use Mix.Config
 
 # General application configuration
-config :volna_api,
-  ecto_repos: [VolnaApi.Repo]
 
 # Configures the endpoint
 config :volna_api, VolnaApi.Endpoint,

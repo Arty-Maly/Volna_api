@@ -7,10 +7,10 @@ defmodule VolnaApi.RadioStationView do
 
   def to_json(radio_station) do
     %{
-      name: radio_station.name,
-      url: radio_station.url,
-      image: radio_station.image,
-      position: radio_station.position
+      name: radio_station["name"],
+      url: radio_station["url"],
+      image: radio_station["image"],
+      position: radio_station["position"]
     }
   end
 end
