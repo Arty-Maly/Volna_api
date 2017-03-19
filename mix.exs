@@ -38,7 +38,10 @@ defmodule VolnaApi.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:ex_machina, "~> 1.0", only: [:test, :dev]}]
+     {:ex_machina, "~> 1.0", only: [:test, :dev]},
+     {:comeonin, "~> 2.4"},
+     {:poison, "~> 3.0", override: true},
+     {:guardian, "~> 0.10.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

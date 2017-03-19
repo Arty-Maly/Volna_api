@@ -3,7 +3,7 @@ defmodule VolnaApi.Repo.Migrations.AddPositionToRadioStations do
 
   def up do
     alter table(:radio_stations) do
-      add :position, :integer
+      add :position, :string
     end
 
     create unique_index(:radio_stations, [:name])

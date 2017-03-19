@@ -12,14 +12,11 @@
 
 
 
-
-Enum.each(stations, fn({key, [url, position, image]}) ->
+Enum.each(radio_stations, fn({name, info}) ->
   VolnaApi.Repo.insert!(%VolnaApi.RadioStation{
-    name: key,
-    url: url,
-    position: position,
-    image: image
+    name: name,
+    url: info["url"],
+    position: info["position"],
+    image: info["image"]
     })
 end)
-
-# VolnaApi.Repo.insert!(%VolnaApi.SomeModel{})

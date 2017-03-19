@@ -5,7 +5,7 @@ defmodule VolnaApi.RadioStation do
     field :name, :string
     field :url, :string
     field :image, :string
-    field :position, :integer
+    field :position, :string
     timestamps()
   end
 

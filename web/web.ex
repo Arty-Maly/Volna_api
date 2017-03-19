@@ -52,6 +52,7 @@ defmodule VolnaApi.Web do
       import VolnaApi.Router.Helpers
       import VolnaApi.ErrorHelpers
       import VolnaApi.Gettext
+      import VolnaApi.ViewHelper
     end
   end
 

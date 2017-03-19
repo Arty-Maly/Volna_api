@@ -1,4 +1,3 @@
-
 require IEx
 defmodule VolnaApi.RadioStationController do
   use VolnaApi.Web, :controller
@@ -7,7 +6,6 @@ defmodule VolnaApi.RadioStationController do
 
   def index(conn, params) do
     uuid = params["uuid"]
-    IEx.pry
     if uuid do
       device = Repo.get_by(VolnaApi.Device, uuid: uuid)
       radio_stations = Repo.all(RadioStation)
@@ -27,7 +25,29 @@ defmodule VolnaApi.RadioStationController do
       render(conn, "index.json", radio_stations: [])
     end
   end
+
+  def show(conn, params) do
+    stations = Repo.all(RadioStation)
+
+    render(conn, "show.html", stations: stations)
+  end
+
+  def update(conn, %{"id" => id, "radio_station" => radio_station_params}) do
+    radio_station = Repo.get(RadioStation, id)
+    changeset = RadioStation.changeset(radio_station, radio_station_params)
+    case Repo.update(changeset) do
+      {:ok, user} ->
+        conn
+        |> put_flash(:info, "Radio Station #{radio_station.name} updated")
+        |> redirect(to: radio_station_path(conn, :show))
+      {:error, changeset} ->
+        conn
+        |> put_flash(:info, "Radio Station #{radio_station.name} NOT updated")
+        |> redirect(to: radio_station_path(conn, :show))
+    end
+  end
 end
+
 
 # Leaving this for now
 #   def index(conn, _params) do

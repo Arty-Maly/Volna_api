@@ -11,4 +11,8 @@ defmodule VolnaApi.Repo.Migrations.CreateDevice do
 
     create unique_index(:devices, [:uuid])
   end
+
+  def down do
+    drop table(:radio_stations)
+  end
 end
