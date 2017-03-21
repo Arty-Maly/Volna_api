@@ -23,10 +23,9 @@ defmodule VolnaApi.Router do
 
   scope "/", VolnaApi do
     pipe_through :browser # Use the default browser stack
-    resources "/sessions", SessionController, only: [:new, :create,
-                                                   :delete]
+    resources "/sessions", SessionController, only: [:create, :delete]
     resources "/users", UserController, only: [:new, :create]
-    get "/", PageController, :index
+    get "/", LandingPageController, :index
     get "/login", SessionController, :new
     get "/logout", SessionController, :delete
   end

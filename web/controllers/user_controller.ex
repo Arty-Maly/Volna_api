@@ -35,7 +35,7 @@ defmodule VolnaApi.UserController do
       :error ->
         conn
         |> put_flash(:info, "No access")
-        |> redirect(to: page_path(conn, :index))
+        |> redirect(to: user_path(conn, :index))
     end
   end
 
@@ -48,7 +48,7 @@ defmodule VolnaApi.UserController do
           {:ok, user} ->
             conn
             |> put_flash(:info, "User updated")
-            |> redirect(to: page_path(conn, :index))
+            |> redirect(to: user_path(conn, :index))
           {:error, changeset} ->
             conn
             |> render("show.html", user: user, changeset: changeset)
@@ -56,7 +56,7 @@ defmodule VolnaApi.UserController do
       :error ->
         conn
         |> put_flash(:info, "No access")
-        |> redirect(to: page_path(conn, :index))
+        |> redirect(to: user_path(conn, :index))
     end
   end
 end

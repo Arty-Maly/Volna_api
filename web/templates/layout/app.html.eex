@@ -9,19 +9,19 @@
 
     <title>Hello VolnaApi!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
 
 
   <body>
     <div class="container">
-    <header class="header">
-      <nav role="navigation">
-        <ul class="nav nav-pills pull-right">
-          <%= render "sign_in_sign_out.html", conn: @conn %><br><br>
-        </ul>
-      </nav>
-      <span class="logo"></span>
-    </header>
+    <%# <header class="header"> %>
+      <%# <nav role="navigation"> %>
+        <%# <ul class="nav nav-pills pull-right"> %>
+          <%# <% render "sign_in_sign_out.html", conn: @conn<br><br> %>
+        <%# </ul> %>
+      <%# </nav> %>
+    <%# </header> %>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

@@ -1,0 +1,17 @@
+<div class="landing-page-container">
+  <div class="welcome">
+    <h2> Добро Пожаловать На Радио Плюс </h2>
+  </div>
+
+  <div class="landing">
+    <div class="iphone-container">
+      <div class="iphone-pic">
+      </div>
+    </div>
+    <div class="description-container">
+      <div class="description-text">
+      </div>
+  </div>
+</div>
+
+
