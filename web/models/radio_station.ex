@@ -15,6 +15,6 @@ defmodule VolnaApi.RadioStation do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :url, :image, :position])
-    |> validate_required([:name, :url, :position, :image], message: "Missing Requires Params")
+    |> validate_required([:name, :url, :position, :image], message: "Missing Required Params")
   end
 end

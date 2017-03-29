@@ -4,8 +4,8 @@ defmodule VolnaApi.RadioStationTest do
 
   alias VolnaApi.RadioStation
 
-  @valid_attrs %{name: "Radio", url: "www", image: "abc", position: 1}
-  @invalid_attrs %{name: 123, url: 123, image: 123, position: "bla"}
+  @valid_attrs %{name: "Radio", url: "www", image: "abc", position: "1"}
+  @invalid_attrs %{name: 123, url: 123, image: 123, position: 123}
   @missing_attrs %{name: nil, url: nil, position: nil, image: nil}
 
   test "changeset with valid attributes" do
@@ -19,7 +19,7 @@ defmodule VolnaApi.RadioStationTest do
     assert changeset.errors[:name] == {"is invalid", [type: :string, validation: :cast]}
     assert changeset.errors[:url] == {"is invalid", [type: :string, validation: :cast]}
     assert changeset.errors[:image] == {"is invalid", [type: :string, validation: :cast]}
-    assert changeset.errors[:position] == {"is invalid", [type: :integer, validation: :cast]}
+    assert changeset.errors[:position] == {"is invalid", [type: :string, validation: :cast]}
   end
 
   test "changeset with missing attributes" do

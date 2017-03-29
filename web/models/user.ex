@@ -1,4 +1,4 @@
-defmodule VolnaApi.User do
+ defmodule VolnaApi.User do
   use VolnaApi.Web, :model
 
   schema "users" do
@@ -14,7 +14,7 @@ defmodule VolnaApi.User do
   """
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, ~w(email), [])
+    |> cast(params, ~w(email))
     |> validate_format(:email, ~r/@/)
   end
 

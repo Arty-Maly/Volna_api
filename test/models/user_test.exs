@@ -3,8 +3,8 @@ defmodule VolnaApi.UserTest do
 
   alias VolnaApi.User
 
-  @valid_attrs %{email: "some content", password_hash: "some content"}
-  @invalid_attrs %{}
+  @valid_attrs %{email: "a@a", password_hash: "some content"}
+  @invalid_attrs %{email: 1231, password_hash: "some content"}
 
   test "changeset with valid attributes" do
     changeset = User.changeset(%User{}, @valid_attrs)
