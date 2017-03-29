@@ -4,7 +4,7 @@
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
 use Mix.Config
-
+import_config "#{Mix.env}.exs"
 # General application configuration
 config :volna_api,
   ecto_repos: [VolnaApi.Repo]
@@ -33,4 +33,4 @@ config :guardian, Guardian,
   serializer: VolnaApi.GuardianSerializer
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+

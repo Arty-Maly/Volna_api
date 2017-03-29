@@ -13,16 +13,20 @@ use Mix.Config
 # which you typically run after static files are built.
 config :volna_api, VolnaApi.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "safe-scrubland-21217.herokuapp.com", port: 443],
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  url: [scheme: "http", host: System.get_env("HOST"), port: {:system, "PORT"}],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  code_reloader: false,
   cache_static_manifest: "priv/static/manifest.json",
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  server: true
 
 config :volna_api, VolnaApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true
+  database: System.get_env("DB_NAME"),
+  username: System.get_env("DB_USERNAME"),
+  password: System.get_env("DB_PASSWORD"),
+  hostname: System.get_env("DB_HOSTNAME"),
+  port: System.get_env("DB_PORT") || 5432,
+  pool_size: 20
 
 # Do not print debug messages in production
 config :logger, level: :info
