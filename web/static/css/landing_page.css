@@ -1,3 +1,8 @@
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 p {
   margin: 0;
 }
@@ -42,13 +47,13 @@ body {
 }
 
 .description {
-  margin-left: 0.5em;
   margin-right: 1.5em;
   margin-bottom: 1em;
   font-size: 2vw;
 }
 
 .iphone-pic {
+  animation: 2s fadein;
   height:90%;
   background-repeat: no-repeat;
   background-image: url("/images/volna_landing_image.png");
