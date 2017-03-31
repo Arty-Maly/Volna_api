@@ -8,7 +8,7 @@ defmodule VolnaApi.RadioStationView do
     json_map = Enum.reduce radio_stations, %{}, fn station, acc ->
       Map.put(acc, station.name, to_json(station))
     end
-    %{stations: json_map}
+    json_map
   end
 
   def to_json(radio_station) do
