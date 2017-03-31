@@ -72,6 +72,7 @@ body {
   background-position: center;
   background-size: contain;
   margin-bottom: 1em;
+  margin-left: 0.5em;
 }
 
 .subscribe {
@@ -107,4 +108,27 @@ body {
 
 .email-submit-button:active {
   background-color: white;
+}
+
+@media screen and (min-device-width : 414px) and (-webkit-device-pixel-ratio: 3) and (orientation : landscape) {
+  .description, .greeting-text {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation : landscape) {
+  .description, .greeting-text {
+    font-size: 4vw;
+  }
+}
+
+
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+  .description, .greeting-text {
+    font-size: 4vw;
+  }
+
+  .iphone-pic {
+    background-position: top;
+  }
 }
