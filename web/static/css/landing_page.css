@@ -76,13 +76,14 @@ body {
 }
 
 .subscribe {
-  width:50%;
+  /*width:50%;*/
 }
 
 .email-input {
   height:1.5vw;
   font-size: 1.5vw;
   width: 50%;
+  vertical-align: middle;
 }
 
 .subscribe-text p {
@@ -98,7 +99,7 @@ body {
   height: 2vw;
   width:25%;
   color: white;
-  vertical-align: bottom;
+  vertical-align: middle;
   background-color: transparent;
 }
 
@@ -111,24 +112,44 @@ body {
 }
 
 @media screen and (min-device-width : 414px) and (-webkit-device-pixel-ratio: 3) and (orientation : landscape) {
-  .description, .greeting-text {
+  .description, .greeting-text, .subscribe-text p {
     font-size: 4vw;
   }
+
 }
 
 @media only screen and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation : landscape) {
-  .description, .greeting-text {
+  .description, .greeting-text, .subscribe-text p {
     font-size: 4vw;
   }
 }
 
 
 @media screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-  .description, .greeting-text {
+  .description, .greeting-text, .subscribe-text p {
     font-size: 4vw;
   }
 
   .iphone-pic {
     background-position: top;
+  }
+
+  .email-submit-button {
+  font-size: 3vw;
+  height: 5vw;
+  width:22vw;
+  background-color: transparent;
+  padding: 0;
+  }
+
+  .email-input {
+    height: 4vw;
+    font-size: 3vw;
+  }
+  .landing {
+    margin-top: 0.5em;
+  }
+  .welcome {
+    margin-top: 0.3em;
   }
 }
