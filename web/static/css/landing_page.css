@@ -1,4 +1,10 @@
 @keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+
+}
+
+@-webkit-keyframes fadein {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -40,6 +46,8 @@ body {
 .iphone-container {
   flex-basis: 40%;
   margin-top: 2em;
+  display: flex;
+  flex-direction: row;
 }
 
 .description-text {
@@ -53,13 +61,15 @@ body {
 }
 
 .iphone-pic {
-  animation: 2s fadein;
-  height:90%;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 2s;
+  animation: 3s fadein;
+  flex-basis: 90%;
   background-repeat: no-repeat;
   background-image: url("/images/volna_landing_image.png");
   background-position: center;
   background-size: contain;
-  background-repeat: no-repeat;
+  margin-bottom: 1em;
 }
 
 .subscribe {
