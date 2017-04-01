@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Русское радио приложение для айфона и айпад">
+    <meta name="author" content="Radio Plus">
+    <meta name="keywords" content="радио, айфон, russian radio">
 
-    <title>Hello VolnaApi!</title>
+    <%= render_existing(@view_module, "meta." <> @view_template, assigns) %>
+    <title>Русское Радио - Русское радио в телефоне</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   </head>
