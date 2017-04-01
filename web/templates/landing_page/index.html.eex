@@ -1,6 +1,6 @@
 <div class="landing-page-container">
   <div class="welcome">
-    <h2 class="greeting-text"> Добро Пожаловать На Радио Плюс </h2>
+    <%# <h2 class="greeting-text"> Добро Пожаловать На Радио Плюс </h2> %>
   </div>
 
   <div class="landing">
@@ -10,7 +10,15 @@
     </div>
     <div class="description-container">
       <div class="description-text">
-        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class ="greeting-text">Добро Пожаловать На Радио Плюс</p>
+        <ul class="description">
+        <li>Отличное качество звука</li>
+        <li>Растущее количество радиостанций</li>
+        <li>Удобный Интерфейс</li>
+        <li>Все это у вас в кармане!</li>
+         <%# <br>Наслаждайтесь вашей любимой радиостанцией где бы в не находились %>
+        </ul>
+        <br>Скоро в Аппл Сторе!
       </div>
 
       <div class="subscribe-container">

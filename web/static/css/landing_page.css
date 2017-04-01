@@ -32,11 +32,13 @@ body {
   text-align: center;
 }
 .greeting-text {
-  font-size: 2vw;
+  font-weight: bolder;
 }
 
 .landing {
-  margin-top:1.5em;
+  margin-top:4vw;
+
+  margin-bottom: 4vw;
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -45,6 +47,7 @@ body {
 .description-container {
   flex-basis: 60%;
   margin-left: 0.5em;
+  position: relative;
 }
 .iphone-container {
   flex-basis: 40%;
@@ -54,12 +57,15 @@ body {
 
 .description-text {
   height: 60%;
+  font-size: 1.9vw;
 }
 
 .description {
   margin-right: 1.5em;
   margin-bottom: 1em;
-  font-size: 2vw;
+  font-size: 1.8vw;
+  margin-top: 2vw;
+  line-height: 4;
 }
 
 .iphone-pic {
@@ -71,7 +77,6 @@ body {
   background-image: url("/images/volna_landing_image.png");
   background-position: center;
   background-size: contain;
-  margin-bottom: 1em;
   margin-left: 0.5em;
 }
 
@@ -87,7 +92,12 @@ body {
 }
 
 .subscribe-text p {
-  font-size: 2vw;
+  font-size: 1.65vw;
+}
+.subscribe-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .email-submit-button {
@@ -112,21 +122,21 @@ body {
 }
 
 @media screen and (min-device-width : 414px) and (-webkit-device-pixel-ratio: 3) and (orientation : landscape) {
-  .description, .greeting-text, .subscribe-text p {
+  .description, .subscribe-text p {
     font-size: 4vw;
   }
 
 }
 
 @media only screen and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation : landscape) {
-  .description, .greeting-text, .subscribe-text p {
+  .description, .subscribe-text p {
     font-size: 4vw;
   }
 }
 
 
 @media screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-  .description, .greeting-text, .subscribe-text p {
+  .description, .subscribe-text p {
     font-size: 4vw;
   }
 

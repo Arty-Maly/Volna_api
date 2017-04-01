@@ -9,7 +9,7 @@
 
     <title>Hello VolnaApi!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   </head>
 
 
