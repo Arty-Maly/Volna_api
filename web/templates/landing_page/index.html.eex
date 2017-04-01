@@ -1,5 +1,6 @@
 <div class="landing-page-container">
   <div class="welcome">
+
     <%# <h2 class="greeting-text"> Добро Пожаловать На Радио Плюс </h2> %>
   </div>
 
@@ -9,28 +10,22 @@
       </div>
     </div>
     <div class="description-container">
+      <p class="welcome-text">Ваши любимые радиостанции у вас в кармане </p>
       <div class="description-text">
-        <p class ="greeting-text">Добро Пожаловать На Радио Плюс</p>
-        <ul class="description">
-        <li>Отличное качество звука</li>
-        <li>Растущее количество радиостанций</li>
-        <li>Удобный Интерфейс</li>
-        <li>Все это у вас в кармане!</li>
-         <%# <br>Наслаждайтесь вашей любимой радиостанцией где бы в не находились %>
-        </ul>
-        <p class="soon">Скоро в Аппл Сторе!</p>
-        <hr class="divider"/>
-      </div>
-
-      <div class="subscribe-container">
-        <div class="subscribe-text">
-          <p>Подпишитесь на обновления</p>
-        </div>
-        <div class="subscribe">
-          <%= form_for @conn, prospect_path(@conn, :create), [as: :prospect], fn f -> %>
-            <%= text_input f, :email, class: "email-input", placeholder: "Email"%>
-            <%= submit "Подписаться", class: "email-submit-button"%>
-          <% end %>
+        <div class="logo"></div>
+        <p class="greeting-text">Радиоскоп</p>
+        <p class="soon">Скоро на Айфон!</p>
+        <div class="subscribe-container">
+          <hr class="divider"/>
+          <div class="subscribe-text">
+            <p>Подпишитесь на обновления</p>
+          </div>
+          <div class="subscribe">
+            <%= form_for @conn, prospect_path(@conn, :create), [as: :prospect], fn f -> %>
+              <%= text_input f, :email, class: "email-input", placeholder: "Email"%>
+              <%= submit "OK", class: "email-submit-button"%>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
