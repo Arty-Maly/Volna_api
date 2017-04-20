@@ -7,6 +7,7 @@
     <meta name="description" content="Русское радио приложение для айфона и айпад">
     <meta name="author" content="Radio Plus">
     <meta name="keywords" content="радио, айфон, russian radio">
+    <meta name="google-site-verification" content="C4EKyd9iSujDBy3YQlRq5n3PIpcTyPAt5W_tmKz_EKc" />
 
     <%= render_existing(@view_module, "meta." <> @view_template, assigns) %>
     <title>Русское Радио - Русское радио в телефоне</title>
