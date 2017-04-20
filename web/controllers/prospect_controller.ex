@@ -2,6 +2,12 @@ defmodule VolnaApi.ProspectController do
   use VolnaApi.Web, :controller
   alias VolnaApi.Prospect
 
+  def index(conn, params) do
+    prospects = Repo.all(Prospect)
+
+    render(conn, "index.html", prospects: prospects)
+  end
+
   def create(conn, %{"prospect" => %{"email" => ""}}) do
     conn
     |> redirect(to: landing_page_path(conn, :index))

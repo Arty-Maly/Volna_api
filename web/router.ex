@@ -34,6 +34,8 @@ defmodule VolnaApi.Router do
     pipe_through [:browser, :browser_auth]
     resources "/users", UserController, only: [:show, :index, :update, :new, :create]
     get "/radiostations", RadioStationController, :show
+    get "/prospects", ProspectController, :index
+    get "/devices", DeviceController, :index
     resources "/radiostations", RadioStationController, only: [:update]
   end
 

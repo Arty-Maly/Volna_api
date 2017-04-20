@@ -1,4 +1,3 @@
-require IEx
 defmodule VolnaApi.RadioStationView do
   use VolnaApi.Web, :view
 

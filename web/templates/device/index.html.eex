@@ -1,0 +1,8 @@
+<h1>Devices</h1>
+<table class="table radio-update-table">
+  <%= for device <- @devices do %>
+    <tr>
+      <td> <%= device.uuid %>
+    </tr>
+  <% end %>
+</table>

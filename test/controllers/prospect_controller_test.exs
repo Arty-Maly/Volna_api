@@ -1,4 +1,3 @@
-require IEx
 defmodule VolnaApi.ProspectControllerTest do
   use VolnaApi.ConnCase
   import VolnaApi.Factory

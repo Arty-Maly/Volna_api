@@ -1,4 +1,3 @@
-require IEx
 defmodule VolnaApi.RadioStationController do
   use VolnaApi.Web, :controller
 

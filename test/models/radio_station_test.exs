@@ -1,4 +1,3 @@
-require IEx
 defmodule VolnaApi.RadioStationTest do
   use VolnaApi.ModelCase
 
