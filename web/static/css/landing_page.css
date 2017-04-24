@@ -250,6 +250,23 @@ body {
     left: 50%;
     transform: translate(-50%, 50%);
   }
+
+  .privacy-text {
+    font-size: 13px;
+  }
+
+  .indent {
+    font-size: 11px;
+  }
+  .privacy-header {
+    font-size: 21px;
+  }
+  h3 {
+    font-size: 15px
+  }
+  .privacy-container {
+    width: 75%;
+  }
 }
 
 /*@media screen and (min-device-width : 414px) and (-webkit-device-pixel-ratio: 3) and (orientation : landscape) {
