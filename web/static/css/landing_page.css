@@ -42,6 +42,8 @@ body {
 }
 
 .greeting-text {
+  margin-bottom: 9vh;
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -81,15 +83,19 @@ body {
   position: relative;
   height: 25%;
   width: 80%;
-  top:50%;
+  top:45%;
   left:50%;
   transform: translate(-50%, -90%);
   /*font-size: 2.8vmin;*/
 }
 .soon {
+  background-image: url("/images/app_store_badge.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   text-align: center;
-  margin-top:1.5%;
-  font-size: 2vmin;
+  display: block;
+  height: 6vh;
 }
 .description {
   margin-right: 1.5em;
@@ -108,7 +114,8 @@ body {
   background-image: url("/images/volna_landing_image.png");
   background-position: center;
   background-size: contain;
-  height: 100%;
+  height: 95%;
+  margin-top:10%;
 }
 
 .subscribe {
@@ -131,12 +138,11 @@ body {
 }
 
 .divider {
-  /*flex-grow: 1;*/
+  margin-top: 2px;
   border-top: 2px;
   border-top-style: solid;
   width: 100%;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   border-top-color: #4f95a4;
 }
 .subscribe-container {

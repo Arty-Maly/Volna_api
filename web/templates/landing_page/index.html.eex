@@ -14,8 +14,8 @@
       <div class="description-text">
         <div class="logo"></div>
         <p class="greeting-text">Радиоскоп</p>
-        <p class="soon">Скоро на Айфон!</p>
         <div class="subscribe-container">
+          <a class ="soon" href="https://itunes.apple.com/us/app/%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D1%81%D0%BA%D0%BE%D0%BF/id1221693171?ls=1&mt=8"><%# <img src="app_store_badge.svg"> %></a>
           <hr class="divider"/>
           <div class="subscribe-text">
             <p>Подпишитесь на обновления</p>
