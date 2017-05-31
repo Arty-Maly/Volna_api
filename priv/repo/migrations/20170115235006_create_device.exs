@@ -13,6 +13,6 @@ defmodule VolnaApi.Repo.Migrations.CreateDevice do
   end
 
   def down do
-    drop table(:radio_stations)
+    drop table(:devices)
   end
 end

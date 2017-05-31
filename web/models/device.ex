@@ -4,6 +4,7 @@ defmodule VolnaApi.Device do
   schema "devices" do
     field :uuid, :string
     field :need_sync, :boolean, default: false
+    field :times_synced, :integer, default: 1
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule VolnaApi.Device do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:uuid, :need_sync])
+    |> cast(params, [:uuid, :need_sync, :times_synced])
     |> validate_required([:uuid, :need_sync])
   end
 end

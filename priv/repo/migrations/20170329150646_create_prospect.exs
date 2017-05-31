@@ -4,9 +4,7 @@ defmodule VolnaApi.Repo.Migrations.CreateProspect do
   def change do
     create table(:prospects) do
       add :email, :string
-
       timestamps()
     end
-
   end
 end

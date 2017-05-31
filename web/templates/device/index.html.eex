@@ -2,7 +2,27 @@
 <table class="table radio-update-table">
   <%= for device <- @devices do %>
     <tr>
-      <td> <%= device.uuid %>
+      <td> <%= device.uuid %> </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> <%= device.times_synced %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> <%= device.updated_at %></td>
     </tr>
   <% end %>
 </table>

@@ -2,19 +2,17 @@ defmodule VolnaApi.RadioStationController do
   use VolnaApi.Web, :controller
 
   alias VolnaApi.RadioStation
+  alias VolnaApi.Device
 
   def index(conn, params) do
     uuid = params["uuid"]
     if uuid do
-      device = Repo.get_by(VolnaApi.Device, uuid: uuid)
+      device = Repo.get_by(Device, uuid: uuid)
       radio_stations = Repo.all(RadioStation)
       if device do
-        if device.need_sync do
-          render(conn, "index.json", radio_stations: radio_stations)
-        else
-          #for testing and development purposes always return the list even if no sync needed
-          render(conn, "index.json", radio_stations: radio_stations)
-        end
+        device_changeset = Device.changeset(device, %{times_synced: device.times_synced + 1})
+        Repo.update(device_changeset)
+        render(conn, "index.json", radio_stations: radio_stations)
       else
         changeset = VolnaApi.Device.changeset(%VolnaApi.Device{}, %{uuid: uuid})
         Repo.insert(changeset)
