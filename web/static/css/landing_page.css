@@ -14,9 +14,11 @@ p {
   margin: 0;
 }
 input {
-  font-size: 2vmax;
+  font-size: 1vmax;
 }
-
+.mytd input{
+  width:98%;
+}
 body {
   background-color: #58A6B7;
   color: white;

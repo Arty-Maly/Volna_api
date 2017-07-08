@@ -29,6 +29,10 @@ hr, ul {
     border-width: 0;
     -webkit-padding-start: 0;
 }
+.table-header {
+  font-size: 1.2vmax;
+
+}
 
 /* Phoenix flash messages */
 .alert:empty { display: none; }
@@ -41,7 +45,7 @@ form.link, form.button {
 /* Custom page header */
 
 .position-input {
-  width: 3.5%;
+  width: 2.5%;
 }
 
 .radio-update-td {

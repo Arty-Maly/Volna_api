@@ -5,7 +5,6 @@ defmodule VolnaApi.Repo.Migrations.AddTimesSyncedToDevice do
     alter table(:devices) do
       add :times_synced, :integer, default: 1
     end
-    flush
   end
 
   def down do

@@ -1,21 +1,23 @@
 <h1>Radio Stations</h1>
 <table class="table radio-update-table">
-  <tr>
+  <tr class="table-header">
       <td> Name </td>
       <td> Station Url </td>
       <td> Image </td>
       <td> Position </td>
+      <td> Country</td>
       <td></td>
   </tr>
 
     <%= for station <- @stations do %>
       <tr>
         <%= form_for VolnaApi.RadioStation.changeset(station), radio_station_path(@conn, :update, station), fn f -> %>
-          <td class="name-td"> <%= text_input f, :name, class: "form-control"%> </td>
-          <td> <%= text_input f, :url, class: "form-control"%> </td>
-          <td> <%= text_input f, :image, class: "form-control"%> </td>
-          <td class="position-input"> <%= text_input f, :position, class: "form-control"%> </td>
-          <td class="radio-update-td"> <%= submit "Update Station", class: "btn btn-primary"%> </td>
+          <td class="name-td mytd"> <%= text_input f, :name, class: "form-control"%> </td>
+          <td class="mytd"> <%= text_input f, :url, class: "form-control"%> </td>
+          <td class="mytd"> <%= text_input f, :image, class: "form-control"%> </td>
+          <td class="position-input mytd"> <%= text_input f, :position, class: "form-control"%> </td>
+          <td class="position-input mytd"> <%= text_input f, :country, class: "form-control"%> </td>
+          <td class="radio-update-td mytd"> <%= submit "Update Station", class: "btn btn-primary"%> </td>
         <% end %>
       </tr>
     <% end %>
