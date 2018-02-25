@@ -25,6 +25,19 @@ body {
   font-size: 2vmax;
 }
 
+.myborders {
+  line-height: 4vmax;
+  outline: thin solid whitesmoke;
+}
+
+.green {
+  background-color: #87D37C;
+}
+
+.red {
+  background-color: #D91E18;
+}
+
 .landing-page-container {
   position: absolute;
   height:100%;

@@ -38,6 +38,7 @@ defmodule VolnaApi.Router do
     get "/prospects", ProspectController, :index
     get "/devices", DeviceController, :index
     resources "/radiostations", RadioStationController, only: [:update, :create, :delete, :new, :edit]
+    resources "/healthchecks", HealthCheckController, only: [:index, :show]
   end
 
 

@@ -41,6 +41,7 @@ defmodule VolnaApi.Mixfile do
      {:ex_machina, "~> 1.0", only: [:test, :dev]},
      {:comeonin, "~> 2.4"},
      {:poison, "~> 3.0", override: true},
+     {:httpoison, "~> 1.0"},
      {:guardian, "~> 0.10.0"}]
   end
 

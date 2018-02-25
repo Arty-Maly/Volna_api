@@ -1,0 +1,12 @@
+<h2>Show health check</h2>
+<table class="table radio-update-table">
+<%= for station <- @stations do %>
+  <tr class="myborders">
+    <td class="name-td mytd"> <%= elem(station, 0) %> </td>
+    <td class="name-td mytd"> <%= elem(station, 1) %> </td>
+    <td class="name-td mytd <%= elem(station, 2) %>">  </td>
+  </tr>
+
+<% end %>
+</table>
+<%= link "Back", to: health_check_path(@conn, :index) %>
