@@ -36,12 +36,16 @@ defmodule VolnaApi.HealthCheckController do
   end
 
   defp await(var) do
-    Task.await(var, 20000)
+    try do
+      Task.await(var, 60000)
+    catch _ ->
+      {1,1,"red"}
+    end
   end
 
   defp async_get_request(station) do
     HTTPoison.start()
-    case HTTPoison.get(elem(station, 1)) do
+    case HTTPoison.get(elem(station, 1), [], hackney: [:insecure]) do
         {:ok, %{status_code: 200}} ->
           Tuple.append(station, "green")
         {:ok, %HTTPoison.Response{status_code: 404}} ->
