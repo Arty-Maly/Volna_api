@@ -20,7 +20,7 @@ defmodule VolnaApi.HealthCheckController do
                 {"BLA"}
               end
            end))
-        |> Enum.map(&Task.await/1)
+        |> Enum.map(&await/1)
       # |> fn -> IO.puts(&1) end
       # case HTTPoison.get(elem(station, 1)) do
       #   {:ok, %{status_code: 200}} ->
@@ -33,6 +33,10 @@ defmodule VolnaApi.HealthCheckController do
       #     append(station, "red")
       # end
     render(conn, "show.html", stations: checked)
+  end
+
+  defp await(var) do
+    Task.await(var, 20000)
   end
 
   defp async_get_request(station) do
