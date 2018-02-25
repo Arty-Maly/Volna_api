@@ -1,5 +1,10 @@
 <h2>Show health check</h2>
 <table class="table radio-update-table">
+  <tr class="table-header">
+      <td> Name </td>
+      <td> Station Url </td>
+      <td> Status </td>
+  </tr>
 <%= for station <- @stations do %>
   <tr class="myborders">
     <td class="name-td mytd"> <%= elem(station, 0) %> </td>
