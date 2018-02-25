@@ -28,6 +28,7 @@ body {
 .myborders {
   line-height: 4vmax;
   outline: thin solid whitesmoke;
+  font-size: 1.7vmax;
 }
 
 .green {
