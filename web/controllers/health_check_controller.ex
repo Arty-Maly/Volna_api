@@ -11,27 +11,10 @@ defmodule VolnaApi.HealthCheckController do
   def show(conn, %{"id" => id}) do
     stations = from(station in RadioStation, where: station.country == ^id, select: {station.name, station.url})
                |> Repo.all()
+    HTTPoison.start()
     checked =
       stations
-        |> Enum.map(&Task.async(fn ->
-              try do
-                async_get_request(&1)
-              catch type, error ->
-                {"BLA"}
-              end
-           end))
-        |> Enum.map(&await/1)
-      # |> fn -> IO.puts(&1) end
-      # case HTTPoison.get(elem(station, 1)) do
-      #   {:ok, %{status_code: 200}} ->
-      #     append(station, "green")
-      #   {:ok, %HTTPoison.Response{status_code: 404}} ->
-      #     append(station, "red")
-      #   {:error, %HTTPoison.Error{reason: reason}} ->
-      #     append(station, "red")
-      #   ->
-      #     append(station, "red")
-      # end
+        |> Enum.map(&async_get_request(&1))
     render(conn, "show.html", stations: checked)
   end
 
@@ -44,17 +27,23 @@ defmodule VolnaApi.HealthCheckController do
   end
 
   defp async_get_request(station) do
-    HTTPoison.start()
-    case HTTPoison.get(elem(station, 1), [], hackney: [:insecure]) do
-        {:ok, %{status_code: 200}} ->
-          Tuple.append(station, "green")
-        {:ok, %HTTPoison.Response{status_code: 404}} ->
-          Tuple.append(station, "red")
+    case HTTPoison.head(elem(station, 1), [], [hackney: [{:follow_redirect, true}, :insecure]]) do
+        {:ok, %HTTPoison.Response{status_code: status_code, headers: headers}} ->
+          case Enum.find(headers, &(match?({"Content-Type", "audio/" <> _}, &1))) do
+            nil ->
+              Tuple.append(station, "red")
+            _ ->
+              Tuple.append(station, "green")
+          end
         {:error, %HTTPoison.Error{reason: reason}} ->
           Tuple.append(station, "red")
         _ ->
           Tuple.append(station, "red")
     end
+  end
+
+  defp get_audio_header(headers) do
+    Enum.find(headers, &(match?({"Content-Type", "audio/" <> _}, &1)))
   end
 
   defp get_result() do
