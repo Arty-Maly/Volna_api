@@ -11,10 +11,13 @@ defmodule VolnaApi.HealthCheckController do
   def show(conn, %{"id" => id}) do
     stations = from(station in RadioStation, where: station.country == ^id, select: {station.name, station.url})
                |> Repo.all()
-    HTTPoison.start()
+    HTTPotion.start()
     checked =
       stations
-        |> Enum.map(&async_get_request(&1))
+        |> Enum.map(&Task.async(fn ->
+            async_get_request(&1)
+           end))
+        |> Enum.map(&Task.await/1)
     render(conn, "show.html", stations: checked)
   end
 
@@ -27,16 +30,24 @@ defmodule VolnaApi.HealthCheckController do
   end
 
   defp async_get_request(station) do
-    case HTTPoison.head(elem(station, 1), [], [hackney: [{:follow_redirect, true}, :insecure]]) do
-        {:ok, %HTTPoison.Response{status_code: status_code, headers: headers}} ->
-          case Enum.find(headers, &(match?({"Content-Type", "audio/" <> _}, &1))) do
-            nil ->
+
+    case HTTPotion.get(elem(station, 1), [follow_redirects: true, stream_to: self, timeout: 10_000]) do
+        %HTTPotion.AsyncResponse{id: id} ->
+          IO.puts("here")
+          receive do
+            %HTTPotion.AsyncHeaders{status_code: status_code, headers: headers} ->
+              case Enum.find(headers.hdrs, &(match?({"content-type", "audio/" <> _}, &1))) do
+                nil ->
+                  IO.puts "red"
+                  Tuple.append(station, "red")
+                _ ->
+                  Tuple.append(station, "green")
+              end
+            %HTTPotion.ErrorResponse{message: message} ->
               Tuple.append(station, "red")
             _ ->
-              Tuple.append(station, "green")
+              Tuple.append(station, "red")
           end
-        {:error, %HTTPoison.Error{reason: reason}} ->
-          Tuple.append(station, "red")
         _ ->
           Tuple.append(station, "red")
     end
