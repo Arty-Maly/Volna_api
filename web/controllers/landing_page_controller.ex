@@ -8,4 +8,8 @@ defmodule VolnaApi.LandingPageController do
   def privacy(conn, _params) do
     render(conn, "privacy.html")
   end
+
+  def privacy_eng(conn, _params) do
+    render(conn, "privacy_eng.html")
+  end
 end
