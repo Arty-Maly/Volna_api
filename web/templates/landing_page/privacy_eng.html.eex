@@ -1,16 +1,16 @@
 <div class="privacy-container">
 <h2 class="privacy-header">Privacy Policy</h2>
   <p class="privacy-text">
-  These rules determine the method of processing and protecting information on the individuals using the application named Radio (hereinafter the Application) and its services.The purpose of these Rules is to ensure due protection of the user information, including personal data, from unauthorized access and disclosure<br><br>
-  The current version of the Rules, which are a public document, are available to any Internet user by clicking http://rusradio.plus/privacy/eng
+  These rules determine the method of processing and protecting information on the individuals using the application named Radio (hereinafter the Application) and its services. The purpose of these Rules is to ensure due protection of the user information, including personal data, from unauthorized access and disclosure<br><br>
+  The current version of the Rules, which are a public document, is available to any Internet user by clicking http://rusradio.plus/privacy/eng
   This document can be modified. The administration shall notify the users by posting a new version of the Rules on the site at http://rusradio.plus/privacy<br><br>
   By using the Application the User agrees with the conditions of these Rules.
 
   <h3>1. Purposes of information processing</h3>
   <div class="indent">
-    The Application Administration processes information on the Users, including their personal data, in order to fulfill the Application Administration’s obligations to the Users regarding use of the Site and its services.
+    The Application Administration processes information on the Users, including their personal data, in order to fulfill the Application Administration’s obligations to the Users regarding use of the Application and its services.
     <div class="indent">
-      The Users personal data include:
+      The Users personal data include:<br>
       a)Data that are provided by the Users and are minimally necessary for using the Application, including but not limited to: data about the device used to access the application, data about the interaction between the device and the Application, operating system version, geographic region, and actions taken in the Application.
     </div>
   </div>
@@ -22,7 +22,15 @@
       б)good faith;
     </div>
   </div>
-  <h3>5.Limitation of the Rules, applicability</h3>
+  <h3>3.Rights and obligations</h3>
+    <div class="indent">
+      a)If the user does not accept this policy, the user can opt out by uninstalling the application.
+      b)User agrees to use the Application for personal non-commercial purposes.
+      c)It is forbidden to offer services related to the use of the Application to other Users for the purpose of making a profit. It is prohibited to use any automatic scripts (“robots”)or other means that allow you to interact with the Application without the participation of the User. It is forbidden to take actions aimed at disrupting the normal functioning of the Application and to use special programs containing malicious components (“viruses”)
+      c)The developers of the Application can change the functionality and interface of the Application with or without notifying end users.
+    </div>
+</p>
+  <h3>4.Limitation of the Rules, applicability</h3>
     <div class="indent">
       These Rules do not apply to the actions and Internet resources of third parties.
       The Site Administration bears no liability for the actions of third parties which is the result of using the Internet or the Application Services.
