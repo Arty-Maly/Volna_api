@@ -26,7 +26,7 @@ defmodule VolnaApi.Router do
     resources "/sessions", SessionController, only: [:create, :delete]
     get "/", LandingPageController, :index
     get "/privacy", LandingPageController, :privacy
-    get "/privacy/eng", LandingPageController, :privacy
+    get "/privacy/eng", LandingPageController, :privacy_eng
     get "/login", SessionController, :new
     get "/logout", SessionController, :delete
     resources "/create", ProspectController, only: [:create]
